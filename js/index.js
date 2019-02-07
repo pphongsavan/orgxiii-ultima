@@ -9,6 +9,7 @@ function init() {
 // Stolen from Syntak on Stack Overflow
 // https://stackoverflow.com/questions/39927452/recursively-print-all-permutations-of-a-string-javascript
 function permut(string) {
+	string = string.toLowerCase();
 	if (string.length < 2) return string; // This is our break condition
 
 	let permutations = []; // This array will hold our permutations
@@ -27,7 +28,6 @@ function permut(string) {
 		for (let subPermutation of permut(remainingString)) permutations.push(char + subPermutation);
 	}
 
-	permutations = permutations.map((elem) => elem.toLowerCase());
 	return permutations;
 }
 
